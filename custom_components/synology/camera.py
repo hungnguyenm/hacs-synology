@@ -84,7 +84,6 @@ class SynologyCamera(Camera):
         self._verify_ssl = verify_ssl
         self._camera = self._surveillance.get_camera(camera_id)
         self._motion_setting = self._surveillance.get_motion_setting(camera_id)
-        self.is_streaming = self._camera.is_enabled
 
     def camera_image(self):
         """Return bytes of camera image."""
@@ -121,7 +120,6 @@ class SynologyCamera(Camera):
         self._motion_setting = self._surveillance.get_motion_setting(
             self._camera.camera_id
         )
-        self.is_streaming = self._camera.is_enabled
 
     @property
     def motion_detection_enabled(self):
